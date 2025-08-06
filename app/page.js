@@ -613,7 +613,7 @@ export default function MairiePlateauApp() {
       return renderHomePage()
     }
 
-    // Page content wrapper avec animations
+    // Use PageRenderer for other pages
     return (
       <div className={`min-h-screen ${animationClass}`}>
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
@@ -621,35 +621,13 @@ export default function MairiePlateauApp() {
             <h1 className="text-4xl font-bold mb-4 animate-slide-up">
               {navigationMenu.find(item => item.page === currentPage)?.title || 
                navigationMenu.flatMap(item => item.items).find(item => item.page === currentPage)?.title ||
-               'Page en construction'}
+               'Page'}
             </h1>
             <p className="text-xl text-blue-100">Commune du Plateau - District d'Abidjan</p>
           </div>
         </div>
         
-        <div className="py-16">
-          <div className="container mx-auto px-4">
-            <Card className="max-w-4xl mx-auto">
-              <CardHeader>
-                <CardTitle className="text-2xl text-center">
-                  Contenu à venir
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-gray-600 mb-8">
-                  Cette page est en cours de développement. 
-                  Le contenu sera bientôt disponible.
-                </p>
-                <Button 
-                  onClick={() => navigateTo('accueil')}
-                  variant="outline"
-                >
-                  Retour à l'accueil
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+        <PageRenderer currentPage={currentPage} navigateTo={navigateTo} />
       </div>
     )
   }
