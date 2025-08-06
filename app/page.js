@@ -28,12 +28,14 @@ import {
   Clock
 } from 'lucide-react'
 
+import PageRenderer from '@/components/PageRenderer'
+
 // Images en base64 (simulées pour la démo - en production, vous utiliseriez les vraies images)
 const LOGO_BASE64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-const MAYOR_IMAGE = "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-const PLATEAU_AERIAL = "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-const PLATEAU_NIGHT = "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-const OFFICIALS_GROUP = "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+const MAYOR_IMAGE = "/api/placeholder/400/400"
+const PLATEAU_AERIAL = "https://images.unsplash.com/photo-1697978897183-4615848c85e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHw0fHxjaXR5JTIwaGFsbHxlbnwwfHx8Ymx1ZXwxNzU0NDg2NDcyfDA&ixlib=rb-4.1.0&q=85"
+const PLATEAU_NIGHT = "https://images.unsplash.com/photo-1637768315794-c8345fc33a9f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxnb3Zlcm5tZW50JTIwYnVpbGRpbmd8ZW58MHx8fGJsdWV8MTc1NDQ4NjQ4MHww&ixlib=rb-4.1.0&q=85"
+const OFFICIALS_GROUP = "https://images.unsplash.com/photo-1517009572053-93fb56dfef49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxjaXR5JTIwaGFsbHxlbnwwfHx8Ymx1ZXwxNzU0NDg2NDcyfDA&ixlib=rb-4.1.0&q=85"
 
 export default function MairiePlateauApp() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
